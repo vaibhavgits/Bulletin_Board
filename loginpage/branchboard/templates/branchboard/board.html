@@ -25,15 +25,52 @@
     </div>
     <div id="container">
         <div class="upper">
-            <a class="TnP" href="{% static 'paper.png' %}" title="Training and Placement "> <img src="Paper1" alt="placeholder"/></a>
-            <a class="CSE" href="{% static 'paper.png' %}" title="Computer Science"> <img src="Paper2" alt="placeholder" /></a>
-            <a class="IT" href="{% static 'paper.png' %}" title="Information Technology"> <img src="Paper2" alt="placeholder" /></a>
-            <a class="EC" href="{% static 'paper.png' %}" title="Electronics and Communication"> <img src="Paper3" alt="placeholder" /></a>
+            <a class="TnP" 
+              {% if student == True %}  href="student/TandC/dashboard/student" 
+              {% endif %}
+              {% if teacher == True %} href="teacher/TandC/dashboard/teacher"
+              {% endif %}
+                title="Training and Placement "> <img src="Paper1" alt="placeholder"/></a>
+
+            <a class="CSE" 
+            {% if student == True %}  href="student/CSE/dashboard/student" 
+              {% endif %}
+              {% if teacher == True %} href="teacher/CSE/dashboard/teacher"
+              {% endif %}
+              title="Computer Science"> <img src="Paper2" alt="placeholder" /></a>
+
+            <a class="IT" 
+            {% if student == True %}  href="student/IT/dashboard/student" 
+              {% endif %}
+              {% if teacher == True %} href="teacher/IT/dashboard/teacher"
+              {% endif %} title="Information Technology"> <img src="Paper2" alt="placeholder" /></a>
+
+            <a class="EC" 
+            {% if student == True %}  href="student/EC/dashboard/student" 
+              {% endif %}
+              {% if teacher == True %} href="teacher/EC/dashboard/teacher"
+              {% endif %}title="Electronics and Communication"> <img src="Paper3" alt="placeholder" /></a>
+
         </div>
         <div class="lower">
-            <a class="EE" href="{% static 'paper.png' %}" title="Electrical"> <img src="Paper5" alt="placeholder" /></a>
-            <a class="CE" href="{% static 'paper.png' %}" title="Civil"> <img src="Paper6" alt="placeholder" /></a>
-            <a class="TnP" href="{% static 'paper.png' %}" title="Mechanical"> <img src="Paper7" alt="placeholder" /></a>
+            <a class="EE" 
+            {% if student == True %}  href="student/EE/dashboard/student" 
+              {% endif %}
+              {% if teacher == True %} href="teacher/EE/dashboard/teacher"
+              {% endif %}title="Electrical"> <img src="Paper5" alt="placeholder" /></a>
+
+            <a class="CE"
+            {% if student == True %}  href="student/CE/dashboard/student" 
+              {% endif %}
+              {% if teacher == True %} href="teacher/CE/dashboard/teacher"
+              {% endif %}title="Civil"> <img src="Paper6" alt="placeholder" /></a>
+
+            <a class="ME"
+            {% if student == True %}  href="student/ME/dashboard/student" 
+              {% endif %}
+              {% if teacher == True %} href="teacher/ME/dashboard/teacher"
+              {% endif %}title="Mechanical"> <img src="Paper7" alt="placeholder" /></a>
+
         </div> 
     </div>
 </body>

@@ -41,11 +41,14 @@ img{
     transform:translate(-50%,-50%);
 }
 
+a img{
+    width: 150px;
+}
+
 #container{
     display: block;
     padding: 40px 0 0 20px;
     margin:80px 180px;
-    background-image: url("http://www.hotglitters.net/layouts/bulletin-board/bgs/corkboard.jpg"); 
     background-repeat:repeat;
 }
 

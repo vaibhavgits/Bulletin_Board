@@ -17,9 +17,6 @@
 	<div class="container-fluid">
 		<div class="row text-center">
 			<div class="col-1">
-				<!-- <button class="btn">
-					back button here
-				</button> -->
 				<button class = "btn" type = "button" 
 					{% if student == True %}
 					onclick = "location.href='../../../student'"
@@ -35,13 +32,14 @@
 			<div class="col-4">
 				{% for post in file %}
 					{% if post.branch in branch %}
-						<button class="btn btn-block"><a target = _blank href = {{post.adminupload.url}}>{{post.title}}</a></button>
+						<button class="btn btn-block"><a target = "_blank" href = {{post.adminupload.url}}>{{post.title}}</a></button>
 					{% endif %}
 				{% endfor %}
 				
 			</div>
 			<div class="col-7 display">
-				<embed src="example pdf.pdf" type="application/pdf" width="100%" height="600px" />
+				<!-- <embed src="example pdf.pdf" type="application/pdf" width="100%" height="600px" /> -->
+				<img src="{% static 'corona.jpg' %}">
 			</div>
 		</div>
 	</div>

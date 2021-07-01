@@ -32,7 +32,8 @@
 			<div class="col-4">
 				{% for post in file %}
 					{% if post.branch in branch %}
-						<button class="btn btn-block"><a target = "_blank" href = {{post.adminupload.url}}>{{post.title}}</a></button>
+						<!-- <button class="btn btn-block"><a target = "_blank" href = {{post.adminupload.url}}>{{post.title}}</a></button> -->
+						<button class="btn btn-block" onclick="window.open('{{post.adminupload.url}}', '_blank');">{{post.title}}</button>
 					{% endif %}
 				{% endfor %}
 				

@@ -11,7 +11,7 @@ branch_choices = (
 	('ME','Mechanical engineering'),
 )
 class FilesAdmin(models.Model):
-	adminupload = models.FileField(upload_to = 'media')
+	adminupload = models.FileField()
 	title = models.CharField(max_length = 50)
 	branch = models.CharField(max_length = 50, choices = branch_choices)
 

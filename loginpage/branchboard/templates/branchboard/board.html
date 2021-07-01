@@ -9,70 +9,81 @@
     <link rel="shortcut icon" href="{% static 'branch.ico' %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="{% static 'board2.css' %}"> -->
     <link rel="stylesheet" href="{% static 'board.css' %}">
 </head>
 <body>
-    <div class="group">
-        <!-- <input type="submit" class="button" id = "student" value="Logout"> -->
+
+    <div class="mainarea">
+      <div class="group">
         {% if student == True %}
-        <a id = "student" href="{% url 'mainhome' %}">Logout</a>
+        <a class="student logout" id = "student" href="{% url 'mainhome' %}">LOG OUT</a>
         {% endif %}
         {% if teacher == True %}
-        <a id = "teacher" href="{% url 'mainhome' %}">Logout</a>
+        <a class="teacher logout" id = "teacher" href="{% url 'mainhome' %}">LOG OUT</a>
+        <a class="teacher upload" id = "teacher" href="teacher/upload">UPLOAD</a>
         {% endif %}
     </div>
     <div class="board">
-        <img src="{% static 'board.png' %}" alt="Board" class="center">          
-    </div>
-    <div id="container">
+      <div class="container2">
+        <img src="{% static 'board.png' %}" alt="Board" class="center"> 
+      </div>           
+      <div class="container1" id="container">
         <div class="upper">
             <a class="TnP" 
-              {% if student == True %}  href="student/TandC/dashboard/student" 
+              {% if student == True %}  href="student/TandP/dashboard/student" 
               {% endif %}
-              {% if teacher == True %} href="teacher/TandC/dashboard/teacher"
+              {% if teacher == True %} href="http://localhost:8000/branchboard/teacher/TandP/dashboard/teacher"
               {% endif %}
-                title="Training and Placement"> <img src="{% static 'Placeholder/TandC.jpeg' %}" alt="placeholder"/></a>
+                title="Training and Placement"> </a>
 
             <a class="CSE" 
             {% if student == True %}  href="student/CSE/dashboard/student" 
               {% endif %}
-              {% if teacher == True %} href="teacher/CSE/dashboard/teacher"
+              {% if teacher == True %} href="http://localhost:8000/branchboard/teacher/CSE/dashboard/teacher"
               {% endif %}
-              title="Computer Science"> <img src="{% static 'Placeholder/CSE.jpeg' %}" alt="placeholder" /></a>
+              title="Computer Science"> </a>
 
             <a class="IT" 
             {% if student == True %}  href="student/IT/dashboard/student" 
               {% endif %}
-              {% if teacher == True %} href="teacher/IT/dashboard/teacher"
-              {% endif %} title="Information Technology"> <img src="{% static 'Placeholder/IT.jpeg' %}" alt="placeholder" /></a>
+              {% if teacher == True %} href="http://localhost:8000/branchboard/teacher/IT/dashboard/teacher"
+              {% endif %} title="Information Technology"></a>
 
             <a class="EC" 
             {% if student == True %}  href="student/EC/dashboard/student" 
               {% endif %}
-              {% if teacher == True %} href="teacher/EC/dashboard/teacher"
-              {% endif %}title="Electronics and Communication"> <img src="{% static 'Placeholder/ECE.jpeg' %}" alt="placeholder" /></a>
+              {% if teacher == True %} href="http://localhost:8000/branchboard/teacher/EC/dashboard/teacher"
+              {% endif %}title="Electronics and Communication"></a>
 
         </div>
         <div class="lower">
             <a class="EE" 
             {% if student == True %}  href="student/EE/dashboard/student" 
               {% endif %}
-              {% if teacher == True %} href="teacher/EE/dashboard/teacher"
-              {% endif %}title="Electrical"> <img src="{% static 'Placeholder/EE.jpg' %}" alt="placeholder" /></a>
+              {% if teacher == True %} href="http://localhost:8000/branchboard/teacher/EE/dashboard/teacher"
+              {% endif %}title="Electrical and Electronics"></a>
 
             <a class="CE"
             {% if student == True %}  href="student/CE/dashboard/student" 
               {% endif %}
-              {% if teacher == True %} href="teacher/CE/dashboard/teacher"
-              {% endif %}title="Civil"> <img src="{% static 'Placeholder/Civil.jpeg' %}" alt="placeholder" /></a>
-
+              {% if teacher == True %} href="http://localhost:8000/branchboard/teacher/CE/dashboard/teacher"
+              {% endif %}title="Civil"></a>
+            
             <a class="ME"
-            {% if student == True %}  href="student/ME/dashboard/student" 
-              {% endif %}
-              {% if teacher == True %} href="teacher/ME/dashboard/teacher"
-              {% endif %}title="Mechanical"> <img src="{% static 'Placeholder/ME.jpg' %}" alt="placeholder" /></a>
+              {% if student == True %}  href="student/ME/dashboard/student" 
+                {% endif %}
+                {% if teacher == True %} href="http://localhost:8000/branchboard/teacher/ME/dashboard/teacher"
+                {% endif %}title="Mechanical"></a>
 
         </div> 
+      </div>
     </div>
+  </div>
+  {% if success %}
+  <script type="text/javascript">
+    alert("Notice uploaded successfully")
+  </script>
+  {% endif %}
 </body>
 </html>

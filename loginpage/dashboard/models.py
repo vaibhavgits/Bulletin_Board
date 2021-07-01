@@ -6,7 +6,7 @@ branch_choices = (
 	('IT', 'Information technology'),
 	('EE', 'Electrical and Electronics engineering'),
 	('EC', 'Electronics and communication engineering'),
-	('TandC', 'Training and placement'),
+	('TandP', 'Training and placement'),
 	('CE','Civil engineering'),
 	('ME','Mechanical engineering'),
 )

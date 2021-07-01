@@ -2,6 +2,7 @@
 document.getElementById("student").addEventListener("click", signinFunction);
 document.getElementById("teacher").addEventListener("click", signinFunction);
 document.getElementById("pass-student").addEventListener("keyup", signinFunction)
+document.getElementById("pass-teacher").addEventListener("keyup", signinFunction)
 // var csspage="";
 function signinFunction(event) {
     // window.alert(event.type);

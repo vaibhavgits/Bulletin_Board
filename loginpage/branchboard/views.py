@@ -10,7 +10,10 @@ def upload(request):
 		file2 = request.FILES["file"]
 		filename = request.POST["name"]
 		branch = request.POST["branch"]
-		document = FilesAdmin.objects.create(adminupload = file2, title = filename, branch = branch)
-		document.save()
-		return render(request, 'branchboard/board.html', {'student':False, 'teacher':True, 'success':True})
+		if len(filename) != 0:
+			document = FilesAdmin.objects.create(adminupload = file2, title = filename, branch = branch)
+			document.save()
+			return render(request, 'branchboard/board.html', {'student':False, 'teacher':True, 'success':True})
+		else:
+			return render(request, 'branchboard/board.html', {'student':False, 'teacher':True, 'name':True})
 	return render(request, 'branchboard/fileupload.html')

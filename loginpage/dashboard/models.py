@@ -9,6 +9,7 @@ branch_choices = (
 	('TandP', 'Training and placement'),
 	('CE','Civil engineering'),
 	('ME','Mechanical engineering'),
+	('ALL', 'All branches'),
 )
 class FilesAdmin(models.Model):
 	adminupload = models.FileField()
